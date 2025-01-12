@@ -4,10 +4,10 @@ function FlexContainer(props) {
 
     const styleFlex = {
         display: "flex",
-        flexWrap: "wrap",
         flexDirection: "row",
         gap:"15px",
-        width: "100%"
+        width: "100%",
+        justifyContent:"center"
     };
 
     return (

@@ -1,27 +1,53 @@
 import React from 'react'
-import Cart from './Cart'
+import CartWidget from './CartWidget'
+import { Link, NavLink } from 'react-router-dom'
 
 function NavBar() {
     return (
-        <>
 
-        <h1 style={ { padding:"0 1rem" } }>
-                <img src="/images/logo/pululosHomeLogo.png" alt="pululos logo" style={ { height:"2.5rem"} }/>
-        </h1>
+        <div className="navBarContainer">
+        
+        <div style={ { display:"flex", 
+        justifyContent:"space-between", maxWidth:"1280px", padding:"0"} }>
+
+        <Link to="/">
+            <h1 style={ { paddingLeft:"1rem", height:"48px"} }>
+                <img src="/images/logo/pululosHomeLogo.png" alt="pululos logo" style={ { height:"3rem"} }/>
+            </h1>
+        </Link>
 
         <nav style={ { display:"flex", justifyContent:"center" } }>
 
             <ul style={ { padding:"0", display:"flex", flexDirection:"row", gap:"2.5rem", listStyle:"none" } }>
                 <li style={{ alignSelf:"center" }}>
-                    <a href="#" style={ { color:"white", textDecoration:"none" } }>Home</a>
+
+                    <NavLink to="/" 
+                        style={ {textDecoration:"none" } }
+                        >Inicio
+                    </NavLink>
+
+                </li>
+
+                <li style={{ display:"flex", alignSelf:"center", alignItems:"center", paddingLeft:"1rem" }}>
+
+                    <NavLink to="/pululos" 
+                        style={ {textDecoration:"none", height:"fitContent" } }
+                        >Pululos
+                    </NavLink>
+
+                    <button className="cursor-pointer" style={{background:"none", border:"0", height:"20px"}}>
+                        <img src="/images/svg/arrowIcon.svg" alt="arrow icon" className="hover-light"/>
+                    </button>
+
                 </li>
 
                 <li style={{ alignSelf:"center" }}>
-                    <a href="#" style={ { color:"white" , textDecoration:"none" } }>Explore</a>
-                </li>
 
-                <li style={{ alignSelf:"center" }}>
-                    <a href="#" style={ { color:"white" , textDecoration:"none" } }>About us</a>
+                    <NavLink to="/about" 
+                        style={ {textDecoration:"none" } }
+                        >Sobre Pululos
+                    </NavLink>
+
                 </li>
 
             </ul>
@@ -29,10 +55,12 @@ function NavBar() {
         </nav>
 
         
-        <Cart/>
+        <CartWidget>3</CartWidget>
         
 
-        </>
+        </div>
+
+        </div>
     )
 }
 

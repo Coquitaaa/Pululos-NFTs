@@ -64,36 +64,213 @@
     font-family: 'ubuntu';
 }
 
+#root {
+  padding: 0%;
+  margin: 0%;
+}
+
 body {
-    background-color: rgb(0, 11, 31);
+  height: 100%;
+    background-image: radial-gradient(circle, #0965bb, #0f529a, #0f407a, #0d2e5c, #081e3f);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+
+}
+
+.cursor-pointer:hover {
+  cursor: pointer;
+}
+
+.hover-light:hover {
+  filter: drop-shadow(
+    0 0 25px cyan
+  ) brightness(190%);
+
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    width: 25rem;
+    height: 100%;
+    background-color: #081e3f;
+    color: white;
+    border-right: #0965bb 1px solid;
+    padding: 1rem;
+    padding-top: 7rem;
+}
+
+/* NAVBAR */
+
+a.active {
+    color: rgb(0, 140, 255);
+}
+
+.navBarContainer {
+    background-color: #081e3f;
+    padding: 1rem;
+    margin: 0%;
+}
+
+nav li {
+
+  transition: all 100ms;
+
+} 
+
+nav li a {
+  color: white;
+  transition: all 100ms;
+}
+
+nav li a:hover {
+  color: rgb(0, 140, 255);
+}
+
+.cartIcon{
+
+  transition: all 100ms;
+
+}
+
+
+.cartIcon:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+
+/* botones */
+
+.btn-defaultColor:hover {
+    background-color: rgb(85, 178, 255);
+    cursor: pointer;
+}
+
+.btn-defaultColor {
+    background-color: rgb(0, 140, 255);
+    border: 0;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+    color: white;
 }
 
 .btn-red {
     background-color: rgb(255, 90, 85);
+    border: 0;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+    color: white;
 }
 
 .btn-green {
-    background-color: rgb(79, 180, 79);
+    background-color: rgb(87, 194, 25);
+    color: white;
+    border: 0;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
 }
 
 .btn-blue {
     background-color: rgb(0, 140, 255);
     color: white;
     border: 0;
-    padding: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
 }
 
-/* Product.css */
+.btn-blue:hover {
+    background-color: rgb(85, 178, 255);
+    color: white;
+    cursor: pointer;
+}
+
+.btn-green:hover {
+    background-color: rgb(135, 197, 99);
+    cursor: pointer;
+}
+
+.btn-transparent {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: 0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+}
+
+.btn-transparent:hover {
+  filter: drop-shadow(0 0 15px );
+}
+
+.btn-transparent-blue {
+  color: white;
+  border: 1px solid white;
+  transition: all 200ms;
+}
+
+.btn-transparent-blue:hover {
+  color: white;
+  background-color:rgb(30, 35, 127);
+  border: 1px solid rgb(30, 35, 127);
+}
+
+/* cards */
+
+.favBtn {
+
+  background-color: #fff;
+  color: white;
+}
+
+
+.favBtn:hover {
+
+  cursor: pointer;  
+
+}
+
+.notFavBtn {
+
+  fill: white;
+  color: rgb(255, 255, 255);
+
+}
+
+.notFavBtn:hover {
+
+  cursor: pointer;
+
+}
+
+.card-products {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1rem;
+  margin: 0%;
+  height: auto;
+  width: 100%;
+}
 
 .card {
     border: 1px solid #ddd;
     border-radius: 4px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    background-color: #081e3f;
+} 
+.cardImage {
+  width: 250px;
+  height: 250px;
 } 
 
 .card-body {
     padding: 16px;
+    padding-bottom: 6px;
 }
 
 .card-title {
@@ -103,6 +280,7 @@ body {
 }
 
 .card-text {
+    width: 200px;
     font-size: 0.875rem;
     margin-bottom: 12px;
     color: #bbbbbb;
@@ -121,6 +299,36 @@ body {
     margin-bottom: 16px;
 }
 
+
+.counterButton {
+  align-content: center;
+  color: rgb(0, 140, 255);
+  background-color: rgba(128, 128, 128, 0);
+  font-size: larger;
+  width: 20px;
+  height: 100%;
+  border: 0;
+  transition: all 100ms;
+}
+
+.counterButton:hover {
+  filter: drop-shadow(
+    0 0 20px cyan
+  )
+  brightness(200%);
+
+}
+
+.counter {
+  align-content: center;
+  padding: 0 .75rem;
+  padding-bottom: 2px;
+  height: 100%;
+  border-left: solid 1px gray;
+  border-right: solid 1px gray;
+}
+
+
 div {
     margin: 0.25rem auto;
 }
@@ -128,3 +336,15 @@ div {
 section {
     padding: 0.1rem 0.25rem 2rem;
 }
+
+/* MEDIA QUERYS */
+
+/* Home Page */
+
+@media (max-width: 1450px){
+
+  .discardMedium {
+    display: none;
+  }
+}
+

@@ -1,8 +1,11 @@
 import './App.css'
-import Button from './components/Button';
-import CardProduct from './components/CardProduct';
-import FlexContainer from './components/FlexContainer';
+import HomePage from './components/HomePage';
+import PululosPage from './components/PululosPage';
+import AboutPage from './components/AboutPage';
 import NavBar from './components/NavBar';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ItemDetailContainer from './components/ItemDetailContainer';
+import ItemListContainer from './components/ItemListContainer';
 
 function App() {
 
@@ -13,39 +16,26 @@ function App() {
   return (
     <>
 
-    <div style={ { display:"flex", justifyContent:"space-between"} }>
+    <BrowserRouter>
+
       <NavBar/>
-    </div>
+      
+      <Routes>
 
+        <Route path="/" element={<HomePage/>}/>
+        <Route path="/pululos" element={<PululosPage/>}/>
+        <Route path="/about" element={<AboutPage/>}/>
 
-      <section className="card-products">
-        <FlexContainer>
+        <Route path="/item/:id" element={<ItemDetailContainer/>}/>
+        <Route path="/category/:catid" element={<ItemListContainer/>}/>
+        
+      </Routes>
 
-          <div className="card-product-container" style={ { display:"flex", flexDirection:"row", gap:"25px"} }>
-
-            <CardProduct 
-              img={"/images/pululos/pululoWavesKing.png"}
-              name={"Pululo Rey De Las Olas"}
-              price={12.4}
-              text={"Este pululo es el rey de las olas"}
-            />
-
-            <CardProduct
-              img={"/images/pululos/pululoPirata.png"}
-              name={"Pululo Pirata"}
-              price={6.9}
-              text={"Este pululo es un pirata"}
-            />
-
-
-          </div>
-
-        </FlexContainer>
-
-      </section>  
+    </BrowserRouter>
 
     </>
   )
 }
 
-export default App
+export default App;
+
