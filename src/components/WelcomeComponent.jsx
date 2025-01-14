@@ -41,4 +41,4 @@ function WelcomeComponent() {
   )
 }
 
-export default WelcomeComponent
+export default WelcomeComponent;

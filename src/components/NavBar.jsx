@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import CartWidget from './CartWidget'
 import { Link, NavLink } from 'react-router-dom'
 
 function NavBar() {
+
+    function pululosMenu(event) {
+        console.log("working", event);
+    }
+
     return (
+
+        
 
         <div className="navBarContainer">
         
@@ -35,7 +42,7 @@ function NavBar() {
                         >Pululos
                     </NavLink>
 
-                    <button className="cursor-pointer" style={{background:"none", border:"0", height:"20px"}}>
+                    <button onMouseOver={pululosMenu} className="cursor-pointer" style={{background:"none", border:"0", height:"20px"}}>
                         <img src="/images/svg/arrowIcon.svg" alt="arrow icon" className="hover-light"/>
                     </button>
 
